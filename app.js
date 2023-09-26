@@ -127,11 +127,11 @@ for (let i = 0; i < hours.length; i++) {
 salesData.appendChild(tokyoUl)
 
 
-const lima = {
-    location: "Lima",
-    minCust: 2,
-    maxCust: 16,
-    avgCookiesPerCust: 4.6,
+const dubai = {
+    location: "Dubai",
+    minCust: 11,
+    maxCust: 38,
+    avgCookiesPerCust: 3.7,
     customersPerHour: [],
     cookiesPerHour: [],
     totalCookieSold: 0,
@@ -151,4 +151,21 @@ const lima = {
     }
   },
 };
+
+// add the title for the location
+const Dubai2 = document.createElement("h2")
+DubaiH2.textContent = Dubai.location;
+salesData.appendChild(DubaiH2)
+
+// create a list to show the cookies sold at each hour
+const DubaiUl = document.createElement("ul");
+// loop through out data and for each item create an <li>
+for (let i = 0; i < hours.length; i++) {
+  const li = document.createElement("li");
+  li.textContent = `${hours[i]}: ${Dubai.cookiesPerHour[i]} cookies`
+  DubaiUl.appendChild(li)
+}
+
+salesData.appendChild(DubaiUl)
+
 
